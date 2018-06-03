@@ -32,4 +32,6 @@ Please note that the datafile provided in this repository is the result of our e
 
 # The Results
 The two figures below show the sensitivity and specificity of each of the investigated models to predict truck breakdowns as a function of the time window. Overall, we could not confidently say that any of our models can make meaningful predictions. We think that this poor performance was due to the limited number of training examples (70 data points in total), as well as the lack of expertise to ensure that the engine failures included in our model really changed the oil composition.
-![sensitivity[
+
+![sensitivity](https://github.com/plesqui/truck-breakdown/blob/master/performance-sensitivity.png?raw=true "Sensitivity")
+![specificity](https://github.com/plesqui/truck-breakdown/blob/master/performance_specificity.png?raw=true "Specificity")
