@@ -313,3 +313,36 @@ def run_forest(X_train,Y_train,X_test,Y_test):
     f1score = 2*(precission*sensitivity)/(precission+sensitivity)
     
     return sensitivity, specificity, precission
+
+
+# 4. G A U S S I A N   P R O C E S S   M O D E L
+#===============================================
+def gaussian_pro(X_train,Y_train,X_test,Y_test):
+    kernel = 1.0 * RBF([1.0]*7)
+    clf = GaussianProcessClassifier(kernel=kernel).fit(X_train.T, Y_train.T)
+    
+    y_score =  clf.predict(X_test.T)
+    
+    
+    
+    tn, fp, fn, tp = confusion_matrix(Y_test.T, y_score).ravel()
+    precission = tp/(tp+fp)
+    sensitivity = tp/(tp+fn) #RECALL
+    specificity = tn/(tn+fp)
+    f1score = 2*(precission*sensitivity)/(precission+sensitivity)
+    
+    return sensitivity, specificity, precission
+
+# 5.  R A N D O M  G U E S S I N G
+#=================================
+def random_guess(Y_test):
+    y_guess = np.random.rand(Y_test.shape[0],Y_test.shape[1])
+    y_guess[y_guess>0.5] = 1
+    y_guess[y_guess<=0.5] = 0
+    
+    
+    tn, fp, fn, tp = confusion_matrix(Y_test.T, y_guess.T).ravel()
+    precission = tp/(tp+fp)
+    sensitivity = tp/(tp+fn) #RECALL
+    specificity = tn/(tn+fp)
+    return sensitivity, specificity,precission
