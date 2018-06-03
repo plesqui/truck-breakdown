@@ -9,7 +9,7 @@ The challenge and data was provided by SSR Mining.
 Our goal was to implement machine learning models capable of predicting the probability of engine breakdowns in haul-trucks (see picture below, credit = Wikipedia) for a given future time interval. To address our goal, we focused on two sets of information:
 
 - The measurements of the chemical composition of the engine oil for each truck, taken at regular intervals. This information is useful as the presence of impurities (e.g. water, coolant fuid), or high levels of certain metals (such as copper) in the oil might indicate that parts of the engine are failing. 
-- The maintenance reports, where the exact dates of failures as well as the part broken is described.
+- The maintenance reports, where the exact dates of failures as well as the part broken are described.
 
 ![haul-truck](https://upload.wikimedia.org/wikipedia/commons/5/5c/CamionFermont.png?raw=true "haul-truck")
 
@@ -25,7 +25,7 @@ The available data 'OilAnalysis_vs_DaystoFailure.csv' contains the following inf
 - Truck ID
 - compart -> Refers to the compartment of the truck for which the oil was analysed (e.g. engine, hydraulic, etc.). We only focused on engine oil.
 - oilhours -> age of the oil, in hours. This is useful to identify when new oil was added.
-- A series of measurements output, including V100 (viscosity of oil at 100 C), Fe, Cu, Pb, ... (presence of these elements in oil, in ppm). In our study, we performed a pre-liminary analysis of the distribution of each of these feautres that could be potentially predictors of engine breakdown. We chose the following 7 features of the engine oil measurements: oilhours, V100, Fe, Cu, Al, Mo, Sulf. 
+- A series of measurements output, including V100 (viscosity of oil at 100 C), Fe, Cu, Pb, ... (presence of these elements in oil, in ppm). In our study, we performed a pre-liminary analysis of the distribution of each of these features and asessed which ones could be potentially predictors of engine breakdowns. We chose the following 7 features of the engine oil measurements: oilhours, V100, Fe, Cu, Al, Mo, Sulf. 
 -DamageDelta -> represents the time interval (in days) from the date of oil measurement until the next engine breakdown. 
 
 Please note that the datafile provided in this repository is the result of our exhaustive analysis and processing of the initial data given by the challenge organizers. It summarizes the features that we thought were more promising to predict engine breakdown of trucks using engine oil composition analysis.
@@ -37,4 +37,4 @@ The two figures below show the sensitivity and specificity of each of the invest
 ![specificity](https://github.com/plesqui/truck-breakdown/blob/master/performance_specificity.png?raw=true "Specificity")
 
 # Future Work
-The presented project was part of the Unearthed Hackathon and an informal collaboration that we established with SSR Mining. Although this collaboration has ended, we have some ideas that we would like to explore in the future if an opportunity arises. In particular, we would like to build a recurrent neural network model that takes a sequence of 'alerts' from the truck notification system to predict the next failure event.  
+The presented project was part of the Unearthed Hackathon and also part of an informal collaboration that we established with SSR Mining. Although this collaboration has ended, we have some ideas that we would like to explore in the future if an opportunity arises. In particular, we would like to build a recurrent neural network model that takes a sequence of 'alerts' from the truck notification system to predict the next failure event.  
