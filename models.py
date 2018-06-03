@@ -1,4 +1,4 @@
-# This script contains the different model that we evaluated
+# This script includes the code of the different models that we evaluated in our study
 # 1. Neural Network with one hidden layer (3 hidden units) implemented with TensorFlow.
 # 2. Support Vector Machine model implemented with scikit-learn
 # 3. Random Forest implemented with scikit-learn
