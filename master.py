@@ -1,4 +1,4 @@
-# Master script that perform the following operations:
+# Master script that performs the following operations:
 # 1) Load the training and test set
 # 2) Train the four different models included in models.py
 # 3) Evaluate the sensitivity, specificity and precission of each model.
