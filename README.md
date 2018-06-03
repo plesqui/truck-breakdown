@@ -31,7 +31,10 @@ The available data 'OilAnalysis_vs_DaystoFailure.csv' contains the following inf
 Please note that the datafile provided in this repository is the result of our exhaustive analysis and processing of the initial data given by the challenge organizers. It summarizes the features that we thought were more promising to predict engine breakdown of trucks using engine oil composition analysis.
 
 # The Results
-The two figures below show the sensitivity and specificity of each of the investigated models to predict truck breakdowns as a function of the time window. Overall, we could not confidently say that any of our models can make meaningful predictions. We think that this poor performance was due to the limited number of training examples (70 data points in total), as well as the lack of expertise to ensure that the engine failures included in our model really changed the oil composition.
+The two figures below show the sensitivity and specificity of each of the investigated models to predict truck breakdowns as a function of the time window. Overall, we could not confidently say that any of our models can make meaningful predictions. We think that this poor performance was due to the limited number of training examples (70 data points in total), as well as the lack of expertise to ensure that the engine failures included in our model really changed the oil composition. Note: 'NebbieNet' corresponds to the neural network model.
 
 ![sensitivity](https://github.com/plesqui/truck-breakdown/blob/master/performance-sensitivity.png?raw=true "Sensitivity")
 ![specificity](https://github.com/plesqui/truck-breakdown/blob/master/performance_specificity.png?raw=true "Specificity")
+
+# Future Work
+The presented project was part of the Unearthed Hackathon and an informal collaboration that we established with SSR Mining. Although this collaboration has ended, we have some ideas that we would like to explore in the future if an opportunity arises. In particular, we would like to build a recurrent neural network model that takes a sequence of 'alerts' from the truck notification system to predict the next failure event.  
