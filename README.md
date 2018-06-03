@@ -1,7 +1,9 @@
 # truck-breakdown
 This project was born in the context of the 2017 Unearthed Hackathon (https://unearthed.solutions/hackathons/unearthed-vancouver-2017/), hosted in Vancouver, BC. In a team of 4, we attempted to build a solution for the following challenge:
 
-Using data to proactively predict Equipment Failure prior to the actual failure event occurs by using equipment production, maintenance and alerts information.
+Using data to proactively predict Equipment Failure prior to the actual failure event occurs by using equipment production, maintenance and alerts information. 
+
+The challenge and data was provided by SSR Mining.
 
 # Objective
 Our goal was to implement machine learning models capable of predicting the probability of engine breakdowns in haul-trucks (see picture below, credit = Wikipedia) for a given future time interval. To address our goal, we focused on two sets of information:
@@ -29,3 +31,5 @@ The available data 'OilAnalysis_vs_DaystoFailure.csv' contains the following inf
 Please note that the datafile provided in this repository is the result of our exhaustive analysis and processing of the initial data given by the challenge organizers. It summarizes the features that we thought were more promising to predict engine breakdown of trucks using engine oil composition analysis.
 
 # The Results
+The two figures below show the sensitivity and specificity of each of the investigated models to predict truck breakdowns as a function of the time window. Overall, we could not confidently say that any of our models can make meaningful predictions. We think that this poor performance was due to the limited number of training examples (70 data points in total), as well as the lack of expertise to ensure that the engine failures included in our model really changed the oil composition.
+![sensitivity[
