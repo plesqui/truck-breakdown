@@ -4,10 +4,12 @@ This project was born in the context of the 2017 Unearthed Hackathon (https://un
 Using data to proactively predict Equipment Failure prior to the actual failure event occurs by using equipment production, maintenance and alerts information.
 
 # Objective
-Our goal was to implement machine learning models capable of predicting the probability of engine breakdowns in haul-trucks (see picture below) for a given future time interval. To address our goal, we focused on two sets of information:
+Our goal was to implement machine learning models capable of predicting the probability of engine breakdowns in haul-trucks (see picture below, credit = Wikipedia) for a given future time interval. To address our goal, we focused on two sets of information:
 
 - The measurements of the chemical composition of the engine oil for each truck, taken at regular intervals. This information is useful as the presence of impurities (e.g. water, coolant fuid), or high levels of certain metals (such as copper) in the oil might indicate that parts of the engine are failing. 
 - The maintenance reports, where the exact dates of failures as well as the part broken is described.
+
+![haul-truck](https://upload.wikimedia.org/wikipedia/commons/5/5c/CamionFermont.png?raw=true "haul-truck")
 
 # The Models
 We implemented the following models:
@@ -16,5 +18,14 @@ We implemented the following models:
 3) random forest model, using scikit-learn
 4) gaussian process model, using scikit-learn
 
-# The data
-The available data 'OilAnalysis_vs_DaystoFailure.csv' include oil-composiotion information
+# The Data
+The available data 'OilAnalysis_vs_DaystoFailure.csv' contains the following information from 12 haul trucks acquired over 8 months:
+- Truck ID
+- compart -> Refers to the compartment of the truck for which the oil was analysed (e.g. engine, hydraulic, etc.). We only focused on engine oil.
+- oilhours -> age of the oil, in hours. This is useful to identify when new oil was added.
+- A series of measurements output, including V100 (viscosity of oil at 100 C), Fe, Cu, Pb, ... (presence of these elements in oil, in ppm). In our study, we performed a pre-liminary analysis of the distribution of each of these feautres that could be potentially predictors of engine breakdown. We chose the following 7 features of the engine oil measurements: oilhours, V100, Fe, Cu, Al, Mo, Sulf. 
+-DamageDelta -> represents the time interval (in days) from the date of oil measurement until the next engine breakdown. 
+
+Please note that the datafile provided in this repository is the result of our exhaustive analysis and processing of the initial data given by the challenge organizers. It summarizes the features that we thought were more promising to predict engine breakdown of trucks using engine oil composition analysis.
+
+# The Results
