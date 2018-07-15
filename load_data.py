@@ -1,20 +1,7 @@
 import math
 import pandas as pd
-import matplotlib.pyplot as plt
-#import seaborn as sns
 import numpy as np
-#import h5py
-import tensorflow as tf
-from tensorflow.python.framework import ops
-import sklearn
-from sklearn import preprocessing
-from sklearn.metrics import average_precision_score, precision_recall_fscore_support
-from sklearn.metrics import confusion_matrix
-from sklearn import svm
-from sklearn.svm import SVC
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF
+
  
  # Loading the dataset:
 def load_data_oil_old(filename, t = 14):
