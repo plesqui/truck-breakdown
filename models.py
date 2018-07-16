@@ -276,7 +276,7 @@ def model(X_train, Y_train, X_test, Y_test, n_hidden = 2, learning_rate = 0.001,
 # 2. S U P P O R T   V E C T O R   M A C H I N E   M O D E L 
 #===========================================================
 def run_svm(X_train,Y_train,X_test,Y_test):
-    classifier = svm.LinearSVC()
+    #classifier = svm.LinearSVC()
     classifier = svm.SVC(kernel='rbf')
 
     classifier.fit(X_train.T, Y_train.T)
